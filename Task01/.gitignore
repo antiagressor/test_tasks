@@ -1,0 +1,29 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash logs
+crash.log
+
+# .terraform dir
+.terraform/
+
+# Variable files that may contain secrets
+terraform.tfvars
+*.tfvars.json
+
+# Sensitive output files
+*.pem
+*.key
+*.crt
+
+# Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# System files
+.DS_Store
+Thumbs.db

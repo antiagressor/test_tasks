@@ -1,0 +1,6 @@
+# Beispiel für Variables, ohne Secrets
+
+resource_group_name = "rg-example"
+vm_name             = "example-vm"
+admin_username      = "exampleuser"
+admin_password      = "ExampleP@ssw0rd!"
