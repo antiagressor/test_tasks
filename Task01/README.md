@@ -67,24 +67,30 @@ Example: env/test.tfvars
 ```bash
 resource_group_name = "rg-devops-test"
 vm_name             = "vm-test"
-admin_username      = "testuser"
-admin_password      = "testP@ssw0rd123!"
+location                 = "westeurope"
+key_vault_name           = "my-keyvault-test"
+key_vault_resource_group = "rg-secrets"
+environment = "test"
 ```
 
 Example: env/dev.tfvars
 ```bash
-resource_group_name = "rg-devops-dev"
-vm_name             = "vm-dev"
-admin_username      = "devuser"
-admin_password      = "deveP@ssw0rd123!"
+resource_group_name      = "rg-devops-dev"
+vm_name                  = "vm-dev"
+location                 = "westeurope"
+key_vault_name           = "my-keyvault-dev"
+key_vault_resource_group = "rg-secrets"
+environment = "dev"
 ```
 
 Example: env/prod.tfvars
 ```bash
 resource_group_name = "rg-devops-prod"
 vm_name             = "vm-prod"
-admin_username      = "produser"
-admin_password      = "prodP@ssw0rd123!"
+location                 = "westeurope"
+key_vault_name           = "my-keyvault-prod"
+key_vault_resource_group = "rg-secrets"
+environment = "prod"
 ```
 
 ## 🔐 .gitignore
@@ -110,10 +116,12 @@ crash.log
 
 ## 📄 terraform.tfvars.example
 ```bash
-resource_group_name = "rg-example"
-vm_name             = "example-vm"
-admin_username      = "exampleuser"
-admin_password      = "ExampleP@ssw0rd!"
+resource_group_name       = "rg-example"
+vm_name                   = "example-vm"
+location                  = "example-location"
+key_vault_name            = "example-my-keyvault-name"
+key_vault_resource_group  = "example-rg-secrets"
+environment               = "example_env"
 ```
 
 ## 🤖 CI/CD Integration

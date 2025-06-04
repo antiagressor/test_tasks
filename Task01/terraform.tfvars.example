@@ -1,6 +1,8 @@
 # Beispiel für Variables, ohne Secrets
 
-resource_group_name = "rg-example"
-vm_name             = "example-vm"
-admin_username      = "exampleuser"
-admin_password      = "ExampleP@ssw0rd!"
+resource_group_name       = "rg-example"
+vm_name                   = "example-vm"
+location                  = "example-location"
+key_vault_name            = "example-my-keyvault-name"
+key_vault_resource_group  = "example-rg-secrets"
+environment               = "example_env"

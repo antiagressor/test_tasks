@@ -42,9 +42,9 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name   = azurerm_resource_group.rg.name
   location              = azurerm_resource_group.rg.location
   size                  = "Standard_B1s"
-  admin_username        = var.admin_username
-  admin_password        = var.admin_password
   network_interface_ids = [azurerm_network_interface.nic.id]
+  admin_username        = data.azurerm_key_vault_secret.admin_username.value
+  admin_password        = data.azurerm_key_vault_secret.admin_password.value
   disable_password_authentication = false
 
   os_disk {
@@ -60,6 +60,24 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
   tags = {
-    environment = "dev"
+    environment = var.environment
   }
+}
+
+
+# Get Key Vault by name
+data "azurerm_key_vault" "main" {
+  name                = var.key_vault_name
+  resource_group_name = var.key_vault_resource_group
+}
+
+# Get secrets from Key Vault
+data "azurerm_key_vault_secret" "admin_username" {
+  name         = "admin-username"
+  key_vault_id = data.azurerm_key_vault.main.id
+}
+
+data "azurerm_key_vault_secret" "admin_password" {
+  name         = "admin-password"
+  key_vault_id = data.azurerm_key_vault.main.id
 }

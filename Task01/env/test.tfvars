@@ -1,4 +1,6 @@
 resource_group_name = "rg-devops-test"
 vm_name             = "vm-test"
-admin_username      = "testuser"
-admin_password      = "testP@ssw0rd123!"
+location                 = "westeurope"
+key_vault_name           = "my-keyvault-test"
+key_vault_resource_group = "rg-secrets"
+environment = "test"
